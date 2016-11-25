@@ -4,21 +4,6 @@
     font-size: 150%;
 }
 
-.middle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-    text-shadow: 10px 10px 25px #888888;
-    color: black;
-}
-
-.question :hover {
-    color: ivory;
-    -webkit-text-stroke: 1px black;
-}
-
 .cards {
     position: absolute;
     top: 50%;
@@ -31,8 +16,32 @@
     overflow: hidden;
 }
 
-.card-object {
-    
+.middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 10px 10px 25px #888888;
+    color: black;
+}
+
+#middle-animated {
+    -webkit-animation: middle-animated 5s 1; 
+    animation: middle-animated 2s 1;
+    -webkit-animation-timing-function: ease-out;
+    -webkit-animation-delay: 0s; 
+    animation-delay: 0s;
+    animation-fill-mode: both;
+}
+
+.question :hover {
+    color: ivory;
+    -webkit-text-stroke: 0.5px black;
+}
+
+.question :active {
+    color: black;
 }
 
 #card1 {
@@ -42,24 +51,6 @@
     top: 40vh;
     left: 30vw;
     z-index: -5;
-}
-
-#card2 {
-    -webkit-transform: rotate(0deg); 
-    transform: rotate(0deg);
-    position: relative;
-    top: 40vh;
-    left: 30vw;
-    z-index: -10;
-}
-
-#card3 {
-    -webkit-transform: rotate(12deg); 
-    transform: rotate(12deg);
-    position: relative;
-    top: 40vh;
-    left: 30vw;
-    z-index: -50;
 }
 
 #card1-animate {
@@ -72,6 +63,15 @@
     animation-fill-mode: both;
 }
 
+#card2 {
+    -webkit-transform: rotate(0deg); 
+    transform: rotate(0deg);
+    position: relative;
+    top: 40vh;
+    left: 30vw;
+    z-index: -10;
+}
+
 #card2-animate {
     position: relative;
     -webkit-animation: card2 5s 1; 
@@ -82,6 +82,15 @@
     animation-fill-mode: both;
 }
 
+#card3 {
+    -webkit-transform: rotate(12deg); 
+    transform: rotate(12deg);
+    position: relative;
+    top: 40vh;
+    left: 30vw;
+    z-index: -50;
+}
+
 #card3-animate {
     position: relative;
     -webkit-animation: card3 5s 1; 
@@ -90,6 +99,15 @@
     -webkit-animation-delay: 1s; 
     animation-delay: 0s;
     animation-fill-mode: both;
+}
+
+@-webkit-keyframes middle-animated {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }
 
 @-webkit-keyframes card1 {
