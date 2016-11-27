@@ -4,6 +4,21 @@
     font-size: 150%;
 }
 
+.fortune {
+    font-family: 'Aladin', cursive;
+    text-align: center;
+    font-size: 150%;
+}
+
+.fortune-animated {
+    -webkit-animation: fortune-animated 2s 1; 
+    animation: fortune-animated 2s 1;
+    -webkit-animation-timing-function: ease-in;
+    -webkit-animation-delay: 0s; 
+    animation-delay: 0s;
+    animation-fill-mode: both;
+}
+
 .cards {
     position: absolute;
     top: 50%;
@@ -11,6 +26,17 @@
     margin-right: -50%;
     transform: translate(-50%, -50%);
     z-index: -5;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.fortune-cards {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
     height: 100vh;
     width: 100vw;
     overflow: hidden;
@@ -27,12 +53,23 @@
 }
 
 #middle-animated {
-    -webkit-animation: middle-animated 5s 1; 
+    -webkit-animation: middle-animated 2s 1; 
     animation: middle-animated 2s 1;
-    -webkit-animation-timing-function: ease-out;
+    -webkit-animation-timing-function: linear;
     -webkit-animation-delay: 0s; 
     animation-delay: 0s;
     animation-fill-mode: both;
+}
+
+@-webkit-keyframes middle-animated {
+    from {
+        opacity: 1;
+        visibility: visible;
+    }
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
 }
 
 .question :hover {
@@ -63,6 +100,66 @@
     animation-fill-mode: both;
 }
 
+@-webkit-keyframes card1 {
+    from {top: 50vh; left: 30vw; transform: rotate(-7deg);}
+    to {top: 1000px; left: 30vw; transform: rotate(38deg);}
+}
+
+@keyframes card1 {
+    from {top: 50vh; left: 30vw; transform: rotate(-7deg);}
+    to {top: 1000px; left: 30vw; transform: rotate(38deg);}
+}
+
+#fortune-card1 {
+    position: relative;
+    -webkit-animation: fortune-card1-animate 5s 1; 
+    animation: fortune-card1-animate 2s 1;
+    -webkit-transform: rotate(7deg);
+    transform: rotate(67deg) skewY(-9deg); 
+    position: relative;
+    float: left;
+    top: 58vh;
+    left: 14vw;
+    z-index: 5;
+}
+
+#fortune-card1-animate {
+    position: relative;
+    float: left;
+    -webkit-animation: fortune-card1 5s 1; 
+    animation: fortune-card1 2s 1;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg) skewY(0deg);
+    top: 20vh;
+    left: 10vw;
+}
+
+@-webkit-keyframes fortune-card1 {
+    from {
+        top: 58vh; 
+        left: 14vw; 
+        transform: rotate(67deg) skewY(-9deg);
+    }
+    to {
+        top: 20vh; 
+        left: 10vw; 
+        transform: rotate(0deg) skewY(0deg);
+    }
+}
+
+@keyframes fortune-card1 {
+    from {
+        top: 58vh; 
+        left: 14vw; 
+        transform: rotate(67deg) skewY(-9deg);
+    }
+    to {
+        top: 20vh; 
+        left: 10vw; 
+        transform: rotate(0deg) skewY(0deg);
+    }
+}
+
 #card2 {
     -webkit-transform: rotate(0deg); 
     transform: rotate(0deg);
@@ -80,6 +177,48 @@
     -webkit-animation-delay: 0s; 
     animation-delay: 0s;
     animation-fill-mode: both;
+}
+
+@-webkit-keyframes card2 {
+    from {top: 50vh; left: 30vw; transform: rotate(0deg);}
+    to {top: 1000px; left: 30vw; transform: rotate(-29deg);}
+}
+
+@keyframes card2 {
+    from {top: 50vh; left: 30vw; transform: rotate(0deg);}
+    to {top: 1000px; left: 30vw; transform: rotate(-29deg);}
+}
+
+
+#fortune-card2 {
+    -webkit-transform: rotate(-68deg) skewY(3deg); 
+    transform: rotate(-68deg) skewY(3deg);
+    position: relative;
+    float: left;
+    top: 59vh;
+    left: 36vw;
+/*     z-index: -10; */
+}
+
+#fortune-card2-animate {
+    position: relative;
+    float: left;
+    -webkit-animation: fortune-card2 5s 1; 
+    animation: fortune-card2 2s 1;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg) skewY(0deg);
+    top: 20vh;
+    left: 10vw;
+}
+
+@-webkit-keyframes fortune-card2 {
+    from {top: 59vh; left: 26vw; transform: rotate(-68deg) skewY(3deg);}
+    to {top: 20vh; left: 10vw; transform: rotate(0deg) skewY(0deg);}
+}
+
+@keyframes fortune-card2 {
+    from {top: 59vh; left: 26vw; transform: rotate(-68deg) skewY(3deg);}
+    to {top: 20vh; left: 10vw; transform: rotate(0deg) skewY(0deg);}
 }
 
 #card3 {
@@ -101,33 +240,64 @@
     animation-fill-mode: both;
 }
 
-@-webkit-keyframes middle-animated {
+#fortune-card3 {
+    -webkit-transform: rotate(-94deg); 
+    transform: rotate(-94deg) skewY(-10deg);
+    position: relative;
+    float: left;
+    top: 55vh;
+    left: 40vw;
+}
+
+#fortune-card3-animate {
+    position: relative;
+    clear: both;
+    -webkit-animation: fortune-card3 5s 1; 
+    animation: fortune-card3 2s 1;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg) skewY(0deg);
+    top: 20vh;
+    left: 5vw;
+}
+
+@-webkit-keyframes fortune-card3 {
     from {
-        opacity: 1;
+        top: 55vh;
+        left: 40vw;
+        transform: rotate(-94deg) skewY(-10deg);
     }
     to {
-        opacity: 0;
+        top: 20vh; 
+        left: 5vw; 
+        transform: rotate(0deg) skewY(0deg);
     }
 }
 
-@-webkit-keyframes card1 {
-    from {top: 50vh; left: 30vw; transform: rotate(-7deg);}
-    to {top: 1000px; left: 30vw; transform: rotate(38deg);}
+@keyframes fortune-card3 {
+    from {
+        top: 55vh;
+        left: 40vw;
+        transform: rotate(-94deg) skewY(-10deg);
+    }
+    to {
+        top: 20vh; 
+        left: 5vw; 
+        transform: rotate(0deg) skewY(0deg);}
 }
 
-@keyframes card1 {
-    from {top: 50vh; left: 30vw; transform: rotate(-7deg);}
-    to {top: 1000px; left: 30vw; transform: rotate(38deg);}
+.fortune-title {
+    font-family: 'Kristi', cursive;
 }
 
-@-webkit-keyframes card2 {
-    from {top: 50vh; left: 30vw; transform: rotate(0deg);}
-    to {top: 1000px; left: 30vw; transform: rotate(-29deg);}
-}
-
-@keyframes card2 {
-    from {top: 50vh; left: 30vw; transform: rotate(0deg);}
-    to {top: 1000px; left: 30vw; transform: rotate(-29deg);}
+.baseboard {
+    position: absolute;
+    left: 0px;
+    width: 100vw;
+    height: 200px;
+/*     margin-left: 0px; */
+    margin-top: 300px;
+    background: linear-gradient(rgba(225,225,225,1), rgba(255,255,255,0));
+    z-index: -105;
 }
 
 @-webkit-keyframes card3 {
@@ -138,6 +308,15 @@
 @keyframes card3 {
     from {top: 50vh; left: 30vw; transform: rotate(7deg);}
     to {top: 1000px; left: 30vw; transform: rotate(-82deg);}
+}
+
+@keyframes fortune-animated {
+    from {
+        top: 1000px;
+    }
+    to {
+        top: 0px;
+    }
 }
 
 
